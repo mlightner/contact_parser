@@ -1,0 +1,24 @@
+Parses a blob of contact text:
+
+require 'contact_parser'
+
+ContactParser.parse("Joe Schmoe
+123 fake street
+Fake City, AZ, 12345
+Some company, inc.
+480-555-0012
+joe@google.com")
+
+========================
+
+[~/contact_parser]# irb
+irb(main):001:0> require 'contact_parser'
+=> true
+irb(main):002:0> 
+irb(main):003:0* ContactParser.parse("Joe Schmoe
+irb(main):004:1" 123 fake street
+irb(main):005:1" Fake City, AZ, 12345
+irb(main):006:1" Some company, inc.
+irb(main):007:1" 480-555-0012
+irb(main):008:1" joe@google.com")
+=> {:email=>"joe@google.com", :phone=>"+1 4805550012", :company=>"Some Company, Inc.", :number=>"123", :first=>"Joe", :last=>"Schmoe", :street=>"Fake Street"}
